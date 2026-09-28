@@ -222,5 +222,136 @@
     <path d="M12 19V5M5 12l7-7 7 7"/>
   </svg>
 </a>
+
+<!-- Persona 3 Reload Music Player Widget -->
+<div class="p3r-player-widget" id="p3r-player">
+  <!-- 1. Compact CD Disc (Default) -->
+  <div class="p3r-cd-wrap" id="cd-wrap" role="button" tabindex="0" aria-label="Lecteur audio Persona 3 Reload" title="Lecteur audio Persona 3 Reload">
+    <div class="p3r-cd-disc paused" id="cd-disc"></div>
+    <div class="p3r-cd-badge" id="cd-badge">▶</div>
+  </div>
+
+  <!-- 2. Transformed MP3 Player Panel (Revealed on hover / active) -->
+  <div class="p3r-mp3-panel" id="mp3-panel" role="region" aria-label="Commandes du lecteur de musique">
+    <!-- Makoto Yuki's Stick MP3 Player SVG -->
+    <div class="p3r-stick-player" aria-hidden="true">
+      <svg width="62" height="180" viewBox="0 0 62 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#4A5260"/>
+            <stop offset="25%" stop-color="#9EA8BA"/>
+            <stop offset="50%" stop-color="#E5ECF6"/>
+            <stop offset="75%" stop-color="#A2ACBE"/>
+            <stop offset="100%" stop-color="#3B4350"/>
+          </linearGradient>
+          <linearGradient id="capGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#15171C"/>
+            <stop offset="35%" stop-color="#2D323C"/>
+            <stop offset="60%" stop-color="#4B5262"/>
+            <stop offset="85%" stop-color="#22262E"/>
+            <stop offset="100%" stop-color="#0E1014"/>
+          </linearGradient>
+          <linearGradient id="lcdGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#052840"/>
+            <stop offset="50%" stop-color="#083858"/>
+            <stop offset="100%" stop-color="#042236"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Headphone wire -->
+        <path d="M 28 6 C 26 -10 10 -6 12 25" stroke="#1A1D24" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 28 6 C 26 -10 10 -6 12 25" stroke="#4B5262" stroke-width="1.2" stroke-linecap="round"/>
+
+        <!-- 3.5mm Headphone Jack Plug -->
+        <rect x="25" y="4" width="6" height="14" rx="2" fill="#15171C" stroke="#4B5262" stroke-width="1"/>
+        <line x1="28" y1="4" x2="28" y2="10" stroke="#9EA8BA" stroke-width="1.5"/>
+
+        <!-- Lanyard Loop on Top Cap -->
+        <path d="M 39 12 C 43 12 47 16 47 22 C 47 28 43 32 39 32" stroke="#5D6678" stroke-width="2.5" fill="none"/>
+        <path d="M 39 14 C 41.5 14 44.5 17 44.5 22 C 44.5 27 41.5 30 39 30" stroke="#E5ECF6" stroke-width="1" fill="none"/>
+
+        <!-- Top Knurled Black Cap -->
+        <rect x="15" y="16" width="32" height="34" rx="4" fill="url(#capGrad)" stroke="#111318" stroke-width="1.5"/>
+        <line x1="16" y1="23" x2="46" y2="23" stroke="#111318" stroke-width="1.5"/>
+        <line x1="16" y1="28" x2="46" y2="28" stroke="#5D6678" stroke-width="1"/>
+        <line x1="16" y1="33" x2="46" y2="33" stroke="#111318" stroke-width="1.5"/>
+        <line x1="16" y1="38" x2="46" y2="38" stroke="#5D6678" stroke-width="1"/>
+        <line x1="16" y1="43" x2="46" y2="43" stroke="#111318" stroke-width="1.5"/>
+
+        <!-- Silver Ring Separator -->
+        <rect x="14" y="49" width="34" height="4" fill="#DDE4EF" stroke="#7A8598" stroke-width="1"/>
+
+        <!-- Main Cylindrical Body -->
+        <rect x="15" y="52" width="32" height="106" rx="3" fill="url(#bodyGrad)" stroke="#535B6A" stroke-width="1.5"/>
+        <rect x="25" y="53" width="7" height="104" fill="#FFFFFF" opacity="0.38"/>
+
+        <!-- Vertical LCD Display Frame -->
+        <rect x="20" y="58" width="22" height="88" rx="2" fill="#0C1420" stroke="#333D4D" stroke-width="1.5"/>
+        <rect x="22" y="60" width="18" height="84" rx="1.5" fill="url(#lcdGrad)" stroke="#00f5ff" stroke-width="0.8"/>
+
+        <!-- Screen Content -->
+        <g transform="rotate(90, 31, 102)">
+          <text id="lcd-title" x="5" y="99" fill="#00F5FF" font-size="7.5" font-weight="700" font-family="monospace" letter-spacing="0.5">FULL MOON...</text>
+          <text id="lcd-time" x="5" y="109" fill="#A0F5FF" font-size="6.5" font-family="monospace">❚❚ 00:00</text>
+          <rect x="66" y="103" width="8" height="4.5" rx="1" stroke="#00F5FF" stroke-width="0.8" fill="none"/>
+          <rect x="67" y="104" width="4.5" height="2.5" fill="#00F5FF"/>
+          <line x1="74.5" y1="104.5" x2="74.5" y2="106" stroke="#00F5FF" stroke-width="0.8"/>
+        </g>
+
+        <!-- Lower Section Grip Ring -->
+        <rect x="15" y="152" width="32" height="3" fill="#2D323C" stroke="#111318" stroke-width="0.8"/>
+
+        <!-- Bottom Rounded Aluminum Cap -->
+        <path d="M 15 156 L 47 156 C 47 168 15 168 15 156 Z" fill="url(#bodyGrad)" stroke="#4A5260" stroke-width="1.5"/>
+        <path d="M 23 156 L 39 156 C 39 164 23 164 23 156 Z" fill="#FFFFFF" opacity="0.25"/>
+      </svg>
+    </div>
+
+    <!-- Controls & Track Info -->
+    <div class="p3r-mp3-controls">
+      <div class="p3r-track-header">
+        <span class="p3r-track-brand">P3R AUDIO</span>
+        <div class="p3r-track-actions">
+          <span class="p3r-track-badge" id="track-badge">01/09</span>
+          <button class="p3r-panel-close" id="p3r-player-close" type="button" aria-label="Réduire le lecteur">✕</button>
+        </div>
+      </div>
+
+      <p class="p3r-track-title" id="title-display">Full Moon Full Life</p>
+
+      <div class="p3r-time-row">
+        <span id="current-time">00:00</span>
+        <span id="total-time">00:00</span>
+      </div>
+
+      <div class="p3r-progress-bar" id="progress-bar" role="progressbar" aria-label="Progression de la musique" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" tabindex="0">
+        <div class="p3r-progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="p3r-btn-row">
+        <button class="p3r-ctrl-btn" id="btn-prev" type="button" aria-label="Piste précédente" title="Piste précédente">⏮</button>
+        <button class="p3r-ctrl-btn play-btn" id="btn-play" type="button" aria-label="Lecture / Pause" title="Lecture / Pause">▶</button>
+        <button class="p3r-ctrl-btn" id="btn-next" type="button" aria-label="Piste suivante" title="Piste suivante">⏭</button>
+      </div>
+
+      <div class="p3r-vol-row">
+        <select id="track-select" aria-label="Sélectionner une musique">
+          <option value="0">01. Full Moon Full Life</option>
+          <option value="1">02. Color Your Night</option>
+          <option value="2">03. When The Moon's Reaching Out Stars</option>
+          <option value="3">04. Changing Seasons</option>
+          <option value="4">05. 巌戸台分寮 -Reload-</option>
+          <option value="5">06. Mass Destruction -Reload-</option>
+          <option value="6">07. It's Going Down Now</option>
+          <option value="7">08. 全ての人の魂の戦い</option>
+          <option value="8">09. キミの記憶 -Reload-</option>
+        </select>
+        <input class="p3r-vol-slider" id="vol-slider" type="range" min="0" max="1" step="0.05" value="0.7" aria-label="Volume" title="Volume">
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio-player" preload="metadata" src="assets/music/Full%20Moon%20Full%20Life.mp3"></audio>
+</div>
 </body>
 </html>
