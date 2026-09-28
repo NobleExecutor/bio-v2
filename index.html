@@ -1,12 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Mon Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Florent — Portfolio</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="preload" href="assets/fonts/Skip%20Std%20B.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="assets/fonts/NewRodin%20Pro%20DB.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="assets/fonts/Expressway%20Bold.ttf" as="font" type="font/ttf" crossorigin>
+<script src="js/script.js" defer></script>
 </head>
 <body>
-    
+<div class="bgfx"></div>
+
+<header class="top">
+  <button class="burger" id="open" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menu principal" aria-hidden="true" role="dialog" aria-modal="true">
+  <!-- Background video from assets -->
+  <video class="menu-video" loop muted playsinline src="assets/background.mp4"></video>
+  <div class="menu-overlay"></div>
+
+  <!-- Big vertical rotated index number (01, 02, 03, 04) -->
+  <div class="menu-side-num" id="p3r-side-num" aria-hidden="true"><span>01</span></div>
+
+  <!-- Close button top-right -->
+  <button class="mclose" id="close" type="button" aria-label="Fermer le menu">Fermer</button>
+
+  <!-- Options stack -->
+  <div class="menu-stack">
+    <!-- Option 0: À PROPOS -->
+    <div class="p3r-opt selected" id="p3r-opt-0" data-index="0" data-href="#about" data-d="Qui je suis et ce qui me motive : le développement web, de la vitrine à l'application complète." style="--base-rot: -20deg; --base-x: -30px; --base-y: 35px; --base-transform: translate(-30px, 35px) rotate(-20deg); z-index: 4;">
+      <button class="p3r-opt-btn" type="button" aria-label="À propos - Qui je suis et ce qui me motive"></button>
+      <svg class="p3r-opt-svg" viewBox="0 0 950 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="selector-mask-0" maskUnits="userSpaceOnUse" x="0" y="0" width="950" height="200">
+            <rect width="100%" height="100%" fill="black" />
+            <g transform="translate(-60, -12) rotate(8, 0, 100) scale(5.4, 3.1)" transform-origin="left center">
+              <path fill="white" d="M 24.853754, 93.31573 135.14625, 49.684266 114.14751, 97.331142 Z" />
+              <path fill="white" d="M 12.7428765, 95.50088 144.25712, 47.499123 116.75625, 95.465764 Z" />
+            </g>
+          </mask>
+        </defs>
+        <g class="p3r-cursor-group" transform="translate(-60, -12) rotate(8, 0, 100) scale(5.4, 3.1)" transform-origin="left center">
+          <path class="p3r-cursor-bg" fill="#FD77D9" d="M 12.7428765, 95.50088 144.25712, 47.499123 116.75625, 95.465764 Z" />
+          <path fill="#ffffff" d="M 24.853754, 93.31573 135.14625, 49.684266 114.14751, 97.331142 Z" />
+        </g>
+        <text x="150" y="120" class="p3r-opt-text" fill="#16CFFB">À PROPOS</text>
+        <g class="p3r-opt-red-group" mask="url(#selector-mask-0)">
+          <text x="150" y="120" class="p3r-opt-text-red">À PROPOS</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Option 1: PARCOURS -->
+    <div class="p3r-opt" id="p3r-opt-1" data-index="1" data-href="#education" data-d="Mon parcours : Un bac général, en passant par une licence Maths-Info, puis enfin le BUT MMI de Mulhouse." style="--base-rot: -14deg; --base-x: -10px; --base-y: 20px; --base-transform: translate(-10px, 20px) rotate(-14deg); z-index: 3;">
+      <button class="p3r-opt-btn" type="button" aria-label="Parcours - Mon parcours universitaire"></button>
+      <svg class="p3r-opt-svg" viewBox="0 0 950 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="selector-mask-1" maskUnits="userSpaceOnUse" x="0" y="0" width="950" height="200">
+            <rect width="100%" height="100%" fill="black" />
+            <g transform="translate(-60, -12) rotate(8, 0, 100) scale(5.5, 3.1)" transform-origin="left center">
+              <path fill="white" d="M 24.853754, 93.31573 135.14625, 49.684266 114.14751, 97.331142 Z" />
+              <path fill="white" d="M 12.7428765, 95.50088 144.25712, 47.499123 116.75625, 95.465764 Z" />
+            </g>
+          </mask>
+        </defs>
+        <g class="p3r-cursor-group" transform="translate(-60, -12) rotate(8, 0, 100) scale(5.5, 3.1)" transform-origin="left center">
+          <path class="p3r-cursor-bg" fill="#FD77D9" d="M 12.7428765, 95.50088 144.25712, 47.499123 116.75625, 95.465764 Z" />
+          <path fill="#ffffff" d="M 24.853754, 93.31573 135.14625, 49.684266 114.14751, 97.331142 Z" />
+        </g>
+        <text x="150" y="120" class="p3r-opt-text" fill="#7DE6FD">PARCOURS</text>
+        <g class="p3r-opt-red-group" mask="url(#selector-mask-1)">
+          <text x="150" y="120" class="p3r-opt-text-red">PARCOURS</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Option 2: PROJETS -->
+    <div class="p3r-opt" id="p3r-opt-2" data-index="2" data-href="#projects" data-d="Mes projets : PHP/MySQL, React, WordPress, JS et plus." style="--base-rot: -6deg; --base-x: -40px; --base-y: 10px; --base-transform: translate(-40px, 10px) rotate(-6deg); z-index: 2;">
+      <button class="p3r-opt-btn" type="button" aria-label="Projets - Mes réalisations et créations web"></button>
+      <svg class="p3r-opt-svg" viewBox="0 0 950 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="selector-mask-2" maskUnits="userSpaceOnUse" x="0" y="0" width="950" height="200">
+            <rect width="100%" height="100%" fill="black" />
+            <g transform="translate(-60, -12) rotate(8, 0, 100) scale(5.0, 3.1)" transform-origin="left center">
+              <path fill="white" d="M 24.853754, 93.31573 135.14625, 49.684266 114.14751, 97.331142 Z" />
+              <path fill="white" d="M 12.7428765, 95.50088 144.25712, 47.499123 116.75625, 95.465764 Z" />
+            </g>
+          </mask>
+        </defs>
+        <g class="p3r-cursor-group" transform="translate(-60, -12) rotate(8, 0, 100) scale(5.0, 3.1)" transform-origin="left center">
+          <path class="p3r-cursor-bg" fill="#FD77D9" d="M 12.7428765, 95.50088 144.25712, 47.499123 116.75625, 95.465764 Z" />
+          <path fill="#ffffff" d="M 24.853754, 93.31573 135.14625, 49.684266 114.14751, 97.331142 Z" />
+        </g>
+        <text x="150" y="120" class="p3r-opt-text" fill="#22A6F2">PROJETS</text>
+        <g class="p3r-opt-red-group" mask="url(#selector-mask-2)">
+          <text x="150" y="120" class="p3r-opt-text-red">PROJETS</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Option 3: CONTACT -->
+    <div class="p3r-opt" id="p3r-opt-3" data-index="3" data-href="#contact" data-d="Je cherche une alternance : écrivez-moi !" style="--base-rot: 5deg; --base-x: 10px; --base-y: 0px; --base-transform: translate(10px, 0px) rotate(5deg); z-index: 1;">
+      <button class="p3r-opt-btn" type="button" aria-label="Contact - Me contacter pour une alternance"></button>
+      <svg class="p3r-opt-svg" viewBox="0 0 950 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="selector-mask-3" maskUnits="userSpaceOnUse" x="0" y="0" width="950" height="200">
+            <rect width="100%" height="100%" fill="black" />
+            <g transform="translate(-60, -12) rotate(8, 0, 100) scale(5.0, 3.1)" transform-origin="left center">
+              <path fill="white" d="M 24.853754, 93.31573 135.14625, 49.684266 114.14751, 97.331142 Z" />
+              <path fill="white" d="M 12.7428765, 95.50088 144.25712, 47.499123 116.75625, 95.465764 Z" />
+            </g>
+          </mask>
+        </defs>
+        <g class="p3r-cursor-group" transform="translate(-60, -12) rotate(8, 0, 100) scale(5.0, 3.1)" transform-origin="left center">
+          <path class="p3r-cursor-bg" fill="#FD77D9" d="M 12.7428765, 95.50088 144.25712, 47.499123 116.75625, 95.465764 Z" />
+          <path fill="#ffffff" d="M 24.853754, 93.31573 135.14625, 49.684266 114.14751, 97.331142 Z" />
+        </g>
+        <text x="150" y="120" class="p3r-opt-text" fill="#77FEFC">CONTACT</text>
+        <g class="p3r-opt-red-group" mask="url(#selector-mask-3)">
+          <text x="150" y="120" class="p3r-opt-text-red">CONTACT</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Bottom-Right Description & Command Controls Panel -->
+  <div class="menu-panel">
+    <p class="menu-desc" id="mdesc" aria-live="polite">
+      Qui je suis et ce qui me motive : le développement web, de la vitrine à l'application complète.
+    </p>
+
+    <div class="menu-command-bar">
+      <span>Commande</span>
+      <hr class="menu-command-line">
+    </div>
+
+    <div class="menu-controls">
+      <div class="p3-control" id="control-confirm" role="button" tabindex="0" aria-label="Confirmer la sélection (Clic gauche)">
+        <span class="p3-key p3-key-mouse" aria-hidden="true">
+          <svg width="24" height="32" viewBox="0 0 26 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="24" height="32" rx="10" stroke="#5d6a88" stroke-width="2"/>
+            <rect x="2.5" y="2.5" width="21" height="29" rx="8.5" fill="rgba(3, 31, 100, 0.85)" stroke="#ffffff" stroke-width="2.5"/>
+            <path d="M 3.75 11 C 3.75 6.5 7 3.75 11.75 3.75 L 11.75 14.5 L 3.75 14.5 Z" fill="#ffffff"/>
+            <line x1="13" y1="3.75" x2="13" y2="14.5" stroke="#ffffff" stroke-width="1.5"/>
+            <line x1="3.5" y1="14.5" x2="22.5" y2="14.5" stroke="#ffffff" stroke-width="2"/>
+            <rect x="11.5" y="6" width="3" height="5.5" rx="1.5" fill="#031F64" stroke="#ffffff" stroke-width="1"/>
+          </svg>
+        </span>
+        <span class="p3-label">Confirmer</span>
+      </div>
+      <div class="p3-control" id="control-close" role="button" tabindex="0" aria-label="Fermer le menu (Échap)">
+        <span class="p3-key p3-key-esc" aria-hidden="true">ESC</span>
+        <span class="p3-label">Fermer</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="badge" id="">Recherche alternance</div>
+    <p style="margin-bottom:0"></p>
+    <h1>Florent</h1>
+    <p>Futur développeur web, étudiant en BUT Métiers du Multimédia et de l'Internet (MMI) à Mulhouse.</p>
+  </section>
+
+  <section id="about">
+    <h2 class="h2"><span>À propos</span></h2>
+    <p class="lead">J'ai 21 ans et je suis passionné de développement web. J'aime créer des sites à partir de zéro et apprendre chaque jour, grâce à de nouvelles technologies ou de nouveaux projets.</p>
+    <p class="lead">Mon ambition : devenir développeur full-stack pour répondre à tous les besoins, d'un simple site vitrine à une application complète avec base de données et APIs.</p>
+  </section>
+
+  <section id="education">
+    <h2 class="h2"><span>Parcours</span></h2>
+    <ul class="tl">
+      <li><h3>BUT MMI</h3><div class="when">Université de Haute Alsace, Mulhouse · 2025 – 2028</div><p>Spécialisation en développement web. En recherche d'une alternance pour les 2 prochaines années.</p></li>
+      <li><h3>Licence Mathématiques Informatique</h3><div class="when">Université de Haute Alsace, Mulhouse · 2023 – 2025</div><p>Bases de la programmation orientée objet en C++.</p></li>
+      <li><h3>Baccalauréat général</h3><div class="when">Lycée Louis Armand, Mulhouse · 2021 – 2023</div><p>Mention assez bien, spécialités NSI et LLCER anglais.</p></li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2 class="h2"><span>Projets</span></h2>
+    <div class="grid">
+      <article class="card"><div class="thumb">NGE</div><h3>SAE 203 · Wiki Evangelion</h3><p>Site web relié à une base de données d'au moins 3 tables liées entre elles.</p>
+        <ul class="tags"><li>PHP</li><li>MySQL</li><li>JS</li></ul>
+        <div class="links"><a href="https://nge.noblexecutor.xyz/">Voir le site</a><a href="https://github.com/NobleExecutor/SAE203">GitHub</a></div></article>
+      <article class="card"><div class="thumb">QN</div><h3>Quick Notes App</h3><p>Prise de notes rapide avec stockage persistant dans le navigateur.</p>
+        <ul class="tags"><li>HTML5</li><li>CSS3</li><li>JS</li></ul>
+        <div class="links"><a href="https://nobleexecutor.github.io/notes-app/">Voir le site</a><a href="https://github.com/NobleExecutor/notes-app">GitHub</a></div></article>
+      <article class="card"><div class="thumb">ADF</div><h3>Site Web ADF</h3><p>Campagne de communication à 360° pour une association de self-défense pour femmes.</p>
+        <ul class="tags"><li>WordPress</li><li>JS</li><li>Hébergement</li></ul>
+        <div class="links"><a href="https://adf.noblexecutor.xyz/">Voir le site</a></div></article>
+      <article class="card"><div class="thumb">FS</div><h3>Film Search App</h3><p>Recherche de films : premiers pas avec React, JSX et les hooks.</p>
+        <ul class="tags"><li>React</li><li>Node.js</li><li>API</li></ul>
+        <div class="links"><a href="https://github.com/NobleExecutor/film-search-app">GitHub</a></div></article>
+      <article class="card"><div class="thumb">BIO</div><h3>Portfolio</h3><p>Premier portfolio en ligne, avec déploiement automatique via GitHub Actions.</p>
+        <ul class="tags"><li>HTML5</li><li>JS</li><li>GSAP</li></ul>
+        <div class="links"><a href="https://github.com/NobleExecutor/bio">GitHub</a></div></article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="h2"><span>Contact</span></h2>
+    <div class="contact">
+      <div class="box"><h3>Email</h3><a href="mailto:noblexecutor@duck.com">noblexecutor@duck.com</a></div>
+      <div class="box"><h3>Localisation</h3><a href="https://maps.app.goo.gl/YcXgwgtxZ6E5M4yq6">Mulhouse, France</a></div>
+      <div class="box"><h3>Réseaux</h3><a href="https://www.linkedin.com/in/florent-skamba/">LinkedIn</a> · <a href="https://github.com/NobleExecutor">GitHub</a></div>
+    </div>
+    <a class="cta" href="mailto:noblexecutor@duck.com?subject=Alternance"><span class="unskew">M'écrire</span></a>
+  </section>
+</main>
+<footer>© 2026 NobleExecutor. Tous droits réservés. Code source disponible <a href="https://github.com/NobleExecutor/bio">ici</a>.</footer>
+<a class="back-to-top" id="back-to-top" href="#top" aria-label="Retour en haut de page">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</a>
 </body>
 </html>
