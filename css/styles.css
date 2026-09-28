@@ -641,6 +641,19 @@ section {
     padding: 8px 26px;
     transform: skewX(-12deg) rotate(-2deg);
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.2;
+    animation: badgeFloat 2.6s ease-in-out infinite;
+}
+
+@keyframes badgeFloat {
+    0%, 100% {
+        transform: skewX(-12deg) rotate(-2deg) translateY(0);
+    }
+    50% {
+        transform: skewX(-12deg) rotate(-2deg) translateY(-7px);
+    }
 }
 
 .h2 {
@@ -813,6 +826,10 @@ footer {
     }
 
     .p3r-opt.selected .p3r-cursor-bg {
+        animation: none;
+    }
+
+    .badge {
         animation: none;
     }
 }
