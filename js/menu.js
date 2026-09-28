@@ -13,6 +13,15 @@
     var bgVideo = menu ? menu.querySelector('.menu-video') : null;
     var options = [].slice.call(document.querySelectorAll('.p3r-opt'));
     var idx = 0;
+    var lastClickedIdx = 0;
+
+    if (window.location.hash && window.location.hash !== '#menu-open') {
+        options.forEach(function (opt, k) {
+            if (opt.getAttribute('data-href') === window.location.hash) {
+                lastClickedIdx = k;
+            }
+        });
+    }
 
     var navSound = new Audio('assets/sfx/navigation.wav');
     navSound.volume = 0.5;
@@ -42,6 +51,7 @@
 
     function activateCurrent() {
         if (!options[idx]) return;
+        lastClickedIdx = idx;
         var href = options[idx].getAttribute('data-href');
         close();
         if (href) {
@@ -61,9 +71,9 @@
         if (bgVideo) {
             bgVideo.play().catch(function () { });
         }
-        sel(0, false);
-        var firstBtn = options[0] ? options[0].querySelector('.p3r-opt-btn') : null;
-        if (firstBtn) firstBtn.focus();
+        sel(lastClickedIdx, false);
+        var activeBtn = options[lastClickedIdx] ? options[lastClickedIdx].querySelector('.p3r-opt-btn') : null;
+        if (activeBtn) activeBtn.focus();
     }
 
     function close() {
@@ -141,7 +151,13 @@
         }
     });
 
-    window.p3rMenu = { open: open, close: close, sel: sel };
+    window.p3rMenu = {
+        open: open,
+        close: close,
+        sel: sel,
+        getLastClickedIndex: function () { return lastClickedIdx; },
+        setLastClickedIndex: function (i) { lastClickedIdx = (i + options.length) % options.length; }
+    };
 
     if (window.location.hash === '#menu-open') {
         open();
