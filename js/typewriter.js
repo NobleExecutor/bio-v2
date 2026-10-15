@@ -11,7 +11,7 @@
     var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
-    var words = ['Recherche alternance', 'Hello, World', 'Bienvenue'];
+    var words = ['Recherche stage', 'Hello, World', 'Bienvenue'];
     var wordIdx = 0;
     var charIdx = words[0].length;
     var isDeleting = false;
